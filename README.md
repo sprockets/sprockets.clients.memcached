@@ -1,2 +1,0 @@
-sprockets.clients.memcached
-===========================
