@@ -63,7 +63,8 @@ class ClientIntegrationTests(unittest.TestCase):
             raise unittest.SkipTest('No memcached daemon present')
 
     def test_that_incr_returns_one(self):
-        self.assertEqual(self.client.incr('test-incr'), 1)
+        self.client.set('test-incr', 2)
+        self.assertEqual(self.client.incr('test-incr'), 3)
 
     def test_that_set_key_is_gettable(self):
         self.client.set('foo', 'bar', 60)
