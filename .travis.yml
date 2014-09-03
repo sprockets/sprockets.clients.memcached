@@ -15,6 +15,8 @@ install:
 script: nosetests
 after_success:
   - coveralls
+services:
+  - memcached
 deploy:
   provider: pypi
   user: sprockets

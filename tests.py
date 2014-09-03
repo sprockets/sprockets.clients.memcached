@@ -52,3 +52,19 @@ class TestClientWrapsMemcacheClient(unittest.TestCase):
                                           False,
                                           0,
                                           True)
+
+
+class ClientIntegrationTests(unittest.TestCase):
+
+    def setUp(self):
+        self.client = memcached.Client()
+        self.client.incr('test')
+        if any([s.deaduntil for s in self.client.servers]):
+            raise unittest.SkipTest('No memcached daemon present')
+
+    def test_that_incr_returns_one(self):
+        self.assertEqual(self.client.incr('test-incr'), 1)
+
+    def test_that_set_key_is_gettable(self):
+        self.client.set('foo', 'bar', 60)
+        self.assertEqual(self.client.get('foo'), 'bar')
