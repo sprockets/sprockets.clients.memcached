@@ -20,7 +20,6 @@ https://sprocketsclientsmemcached.readthedocs.org
 
 Requirements
 ------------
--  `sprockets <https://github.com/sprockets/sprockets>`_
 -  `python-memcached <https://pypi.python.org/pypi/python-memcached>`_ (Python 2)
 -  `python3-memcached <https://pypi.python.org/pypi/python3-memcached>`_ (Python 3)
 
