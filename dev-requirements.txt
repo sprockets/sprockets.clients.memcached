@@ -1,0 +1,5 @@
+# Include this version only for documentation building purposes, normally ignored
+-e git://github.com/gmr/python-memcached.git@docstring-update#egg=python-memcached
+sphinx>=1.2,<2
+sphinx-rtd-theme>=0.1,<1.0
+sphinxcontrib-httpdomain>=1.2,<2
