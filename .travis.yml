@@ -10,8 +10,10 @@ python:
   - 3.4
 install:
   - if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then pip install unittest2; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then pip install -r requirements2.txt; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == pypy ]]; then pip install -r requirements2.txt; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 3* ]]; then pip install -r requirements3.txt; fi
   - pip install -r test-requirements.txt
-  - pip install -e .
 script: nosetests
 after_success:
   - coveralls

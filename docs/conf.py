@@ -24,7 +24,5 @@ pygments_style = 'sphinx'
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 intersphinx_mapping = {
-    'python': ('https://docs.python.org/2/', None),
-    'requests': ('https://requests.readthedocs.org/en/latest/', None),
-    'sprockets': ('https://sprockets.readthedocs.org/en/latest/', None),
+    'python': ('https://docs.python.org/2/', None)
 }

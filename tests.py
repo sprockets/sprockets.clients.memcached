@@ -4,7 +4,6 @@ Tests for the sprockets.clients.memcached package
 """
 import mock
 import os
-import pickle
 try:
     import unittest2 as unittest
 except ImportError:
@@ -38,20 +37,7 @@ class TestClientWrapsMemcacheClient(unittest.TestCase):
     @mock.patch('memcache.Client.__init__')
     def test_client_super_init(self, mock_init):
         memcached.Client()
-        mock_init.assert_called_once_with(['127.0.0.1:11211'],
-                                          0,
-                                          0,
-                                          pickle.Pickler,
-                                          pickle.Unpickler,
-                                          None,
-                                          None,
-                                          memcached.SERVER_MAX_KEY_LENGTH,
-                                          memcached.SERVER_MAX_VALUE_LENGTH,
-                                          memcached._DEAD_RETRY,
-                                          memcached._SOCKET_TIMEOUT,
-                                          False,
-                                          0,
-                                          True)
+        mock_init.assert_called_once_with(['127.0.0.1:11211'])
 
 
 class ClientIntegrationTests(unittest.TestCase):
@@ -62,7 +48,7 @@ class ClientIntegrationTests(unittest.TestCase):
         if any([s.deaduntil for s in self.client.servers]):
             raise unittest.SkipTest('No memcached daemon present')
 
-    def test_that_incr_returns_one(self):
+    def test_that_incr_returns_a_value_for_a_set_key(self):
         self.client.set('test-incr', 2)
         self.assertEqual(self.client.incr('test-incr'), 3)
 

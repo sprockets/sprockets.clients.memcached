@@ -3,30 +3,10 @@ import sys
 
 import setuptools
 
-
-def read_requirements_file(req_name):
-    requirements = []
-    try:
-        with codecs.open(req_name, encoding='utf-8') as req_file:
-            for req_line in req_file:
-                if '#' in req_line:
-                    req_line = req_line[0:req_line.find('#')].strip()
-                if req_line:
-                    requirements.append(req_line.strip())
-    except IOError:
-        pass
-    return requirements
-
-
 install_requires = ['sprockets']
-setup_requires = read_requirements_file('setup-requirements.txt')
-tests_require = read_requirements_file('test-requirements.txt')
 
-if sys.version_info < (2, 7):
-    tests_require.append('unittest2')
 if sys.version_info < (3, 0):
     install_requires.append('python-memcached')
-    tests_require.append('mock')
 if sys.version_info >= (3, 0):
     install_requires.append('python3-memcached')
 
@@ -67,7 +47,4 @@ setuptools.setup(
     namespace_packages=['sprockets',
                         'sprockets.clients'],
     install_requires=install_requires,
-    setup_requires=setup_requires,
-    tests_require=tests_require,
-    test_suite='nose.collector',
     zip_safe=False)
