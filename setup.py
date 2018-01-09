@@ -16,7 +16,7 @@ def read_requirements(name):
 
 setuptools.setup(
     name='sprockets.clients.memcached',
-    version='1.0.0',
+    version='1.1.0',
     description=('Memcached client wrapper that is configured via '
                  'environment variables'),
     long_description=codecs.open('README.rst', encoding='utf-8').read(),

@@ -1,6 +1,6 @@
 Version History
 ---------------
-- Next Release
+- 1.1.0 [2018-01-09]
 
   - Remove usage of python3-memcached since python-memcached supports
     both Python2 & Python3

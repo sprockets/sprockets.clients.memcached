@@ -14,7 +14,7 @@ import os
 
 import memcache
 
-version_info = (0, 0, 0)
+version_info = (1, 1, 0)
 __version__ = '.'.join(str(v) for v in version_info)
 
 LOGGER = logging.getLogger(__name__)
