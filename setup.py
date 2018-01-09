@@ -3,12 +3,15 @@ import sys
 
 import setuptools
 
-install_requires = ['sprockets']
 
-if sys.version_info < (3, 0):
-    install_requires.append('python-memcached')
-if sys.version_info >= (3, 0):
-    install_requires.append('python3-memcached')
+def read_requirements(name):
+    requirements = []
+    with open(name) as req_file:
+        for line in req_file:
+            if '#' in line:
+                line = line[:line.index('#')]
+            requirements.append(line.strip())
+    return requirements
 
 
 setuptools.setup(
@@ -22,13 +25,12 @@ setuptools.setup(
     author_email='api@aweber.com',
     license=codecs.open('LICENSE', encoding='utf-8').read(),
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.2',
@@ -44,7 +46,7 @@ setuptools.setup(
               'sprockets.clients.memcached'],
     package_data={'': ['LICENSE', 'README.rst']},
     include_package_data=True,
-    namespace_packages=['sprockets',
-                        'sprockets.clients'],
-    install_requires=install_requires,
+    namespace_packages=['sprockets', 'sprockets.clients'],
+    install_requires=read_requirements('requirements.txt'),
+    tests_require=read_requirements('test-requirements.txt'),
     zip_safe=False)

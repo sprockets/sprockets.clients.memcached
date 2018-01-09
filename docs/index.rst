@@ -2,7 +2,7 @@ sprockets.clients.memcached
 ===========================
 Memcached client wrapper that is configured via environment variables
 
-|Version| |Downloads| |Status| |Coverage| |License|
+|Version| |Status| |Coverage| |License|
 
 Installation
 ------------
@@ -12,12 +12,11 @@ and can be installed via ``pip`` or ``easy_install``:
 
 .. code:: bash
 
-  pip install sprockets.clients.memcached
+   pip install sprockets.clients.memcached
 
 Requirements
 ------------
--  `python-memcached <https://pypi.python.org/pypi/python-memcached>`_ (Python 2)
--  `python3-memcached <https://pypi.python.org/pypi/python3-memcached>`_ (Python 3)
+-  `python-memcached <https://pypi.python.org/pypi/python-memcached>`_
 
 API Documentation
 -----------------
@@ -26,6 +25,7 @@ API Documentation
 
    api
    examples
+   history
 
 Version History
 ---------------
@@ -59,8 +59,5 @@ Indices and tables
 .. |Coverage| image:: https://img.shields.io/coveralls/sprockets/sprockets.clients.memcached.svg?
    :target: https://coveralls.io/r/sprockets/sprockets.clients.memcached
 
-.. |Downloads| image:: https://pypip.in/d/sprockets.clients.memcached/badge.svg?
-   :target: https://pypi.python.org/pypi/sprockets.clients.memcached
-
-.. |License| image:: https://pypip.in/license/sprockets.clients.memcached/badge.svg?
-   :target: https://sprocketsclientsmemcached.readthedocs.org
+.. |License| image:: https://img.shields.io/github/license/sprockets/sprockets.clients.memcached.svg
+   :target: https://sprocketsclientsmemcached.readthedocs.io
