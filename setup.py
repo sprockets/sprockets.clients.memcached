@@ -3,12 +3,15 @@ import sys
 
 import setuptools
 
-install_requires = ['sprockets']
 
-if sys.version_info < (3, 0):
-    install_requires.append('python-memcached')
-if sys.version_info >= (3, 0):
-    install_requires.append('python3-memcached')
+def read_requirements(name):
+    requirements = []
+    with open(name) as req_file:
+        for line in req_file:
+            if '#' in line:
+                line = line[:line.index('#')]
+            requirements.append(line.strip())
+    return requirements
 
 
 setuptools.setup(
@@ -44,7 +47,7 @@ setuptools.setup(
               'sprockets.clients.memcached'],
     package_data={'': ['LICENSE', 'README.rst']},
     include_package_data=True,
-    namespace_packages=['sprockets',
-                        'sprockets.clients'],
-    install_requires=install_requires,
+    namespace_packages=['sprockets', 'sprockets.clients'],
+    install_requires=read_requirements('requirements.txt'),
+    tests_require=read_requirements('test-requirements.txt'),
     zip_safe=False)
