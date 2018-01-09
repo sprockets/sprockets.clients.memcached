@@ -2,7 +2,7 @@ sprockets.clients.memcached
 ===========================
 Memcached client wrapper that is configured via environment variables.
 
-|Version| |Downloads| |Status| |Coverage| |License|
+|Version| |Status| |Coverage| |License|
 
 Installation
 ------------
@@ -20,8 +20,7 @@ https://sprocketsclientsmemcached.readthedocs.org
 
 Requirements
 ------------
--  `python-memcached <https://pypi.python.org/pypi/python-memcached>`_ (Python 2)
--  `python3-memcached <https://pypi.python.org/pypi/python3-memcached>`_ (Python 3)
+-  `python-memcached <https://pypi.python.org/pypi/python-memcached>`_
 
 Example
 -------
@@ -45,7 +44,7 @@ memcached commands:
 
 Version History
 ---------------
-Available at https://sprocketsclientsmemcached.readthedocs.org/en/latest/history.html
+Available at https://sprocketsclientsmemcached.readthedocs.io/en/latest/history.html
 
 .. |Version| image:: https://badge.fury.io/py/sprockets.clients.memcached.svg?
    :target: http://badge.fury.io/py/sprockets.clients.memcached
@@ -56,8 +55,5 @@ Available at https://sprocketsclientsmemcached.readthedocs.org/en/latest/history
 .. |Coverage| image:: https://img.shields.io/coveralls/sprockets/sprockets.clients.memcached.svg?
    :target: https://coveralls.io/r/sprockets/sprockets.clients.memcached
 
-.. |Downloads| image:: https://pypip.in/d/sprockets.clients.memcached/badge.svg?
-   :target: https://pypi.python.org/pypi/sprockets.clients.memcached
-
-.. |License| image:: https://pypip.in/license/sprockets.clients.memcached/badge.svg?
-   :target: https://sprocketsclientsmemcached.readthedocs.org
+.. |License| image:: https://img.shields.io/github/license/sprockets/sprockets.clients.memcached.svg
+   :target: https://sprocketsclientsmemcached.readthedocs.io
